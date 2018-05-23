@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.com.zhirun.bms_ssm.dao.UserModelMapper">
+  <resultMap id="BaseResultMap" type="cn.com.zhirun.bms_ssm.model.UserModel">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="deleflg" jdbcType="INTEGER" property="deleflg" />
+    <result column="credate" jdbcType="VARCHAR" property="credate" />
+    <result column="upddate" jdbcType="VARCHAR" property="upddate" />
+    <result column="comments" jdbcType="VARCHAR" property="comments" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from t_bms_user
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="cn.com.zhirun.bms_ssm.model.UserModel">
+    insert into t_bms_user (id, name, password, 
+      deleflg, credate, upddate, 
+      comments)
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+      #{deleflg,jdbcType=INTEGER}, #{credate,jdbcType=VARCHAR}, #{upddate,jdbcType=VARCHAR}, 
+      #{comments,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="cn.com.zhirun.bms_ssm.model.UserModel">
+    update t_bms_user
+    set name = #{name,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
+      deleflg = #{deleflg,jdbcType=INTEGER},
+      credate = #{credate,jdbcType=VARCHAR},
+      upddate = #{upddate,jdbcType=VARCHAR},
+      comments = #{comments,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select id, name, password, deleflg, credate, upddate, comments
+    from t_bms_user
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, name, password, deleflg, credate, upddate, comments
+    from t_bms_user
+  </select>
+
+
+
+  <select id="selectUserByNameAndPassword" resultType="java.lang.Integer"
+          parameterType="cn.com.zhirun.bms_ssm.model.UserModel">
+    select count(*) from t_bms_user
+    where name=#{name} and password=#{password}
+  </select>
+
+  <select id="selectUserByName" resultType="java.lang.Integer"
+          parameterType="cn.com.zhirun.bms_ssm.model.UserModel">
+    select count(*) from t_bms_user
+    where name=#{name}
+  </select>
+
+  <insert id="insertUser" parameterType="cn.com.zhirun.bms_ssm.model.UserModel">
+    insert into t_bms_user (id, name, password,
+      deleflg, credate, upddate,
+      comments)
+    values (#{id}, #{name}, #{password},
+      #{deleflg}, #{credate}, #{upddate},
+      #{comments})
+  </insert>
+
+</mapper>

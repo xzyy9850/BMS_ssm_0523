@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.com.zhirun.bms_ssm.dao.MerchantModelMapper">
+    <resultMap id="BaseResultMap" type="cn.com.zhirun.bms_ssm.model.MerchantModel">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="sid" jdbcType="VARCHAR" property="sid"/>
+        <result column="sname" jdbcType="VARCHAR" property="sname"/>
+        <result column="stel" jdbcType="VARCHAR" property="stel"/>
+        <result column="sclassify" jdbcType="VARCHAR" property="sclassify"/>
+        <result column="saddress" jdbcType="VARCHAR" property="saddress"/>
+        <result column="detailadd" jdbcType="VARCHAR" property="detailadd"/>
+        <result column="consumption" jdbcType="REAL" property="consumption"/>
+        <result column="deleflg" jdbcType="INTEGER" property="deleflg"/>
+        <result column="credate" jdbcType="VARCHAR" property="credate"/>
+        <result column="upddate" jdbcType="VARCHAR" property="upddate"/>
+        <result column="comments" jdbcType="VARCHAR" property="comments"/>
+    </resultMap>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from t_bms_merchant
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+    <insert id="insert" parameterType="cn.com.zhirun.bms_ssm.model.MerchantModel">
+    insert into t_bms_merchant (id, sid, sname, 
+      stel, sclassify, saddress, 
+      detailadd, consumption, deleflg, 
+      credate, upddate, comments
+      )
+    values (#{id,jdbcType=INTEGER}, #{sid,jdbcType=VARCHAR}, #{sname,jdbcType=VARCHAR}, 
+      #{stel,jdbcType=VARCHAR}, #{sclassify,jdbcType=VARCHAR}, #{saddress,jdbcType=VARCHAR}, 
+      #{detailadd,jdbcType=VARCHAR}, #{consumption,jdbcType=REAL}, #{deleflg,jdbcType=INTEGER}, 
+      #{credate,jdbcType=VARCHAR}, #{upddate,jdbcType=VARCHAR}, #{comments,jdbcType=VARCHAR}
+      )
+  </insert>
+    <update id="updateByPrimaryKey" parameterType="cn.com.zhirun.bms_ssm.model.MerchantModel">
+    update t_bms_merchant
+    set sid = #{sid,jdbcType=VARCHAR},
+      sname = #{sname,jdbcType=VARCHAR},
+      stel = #{stel,jdbcType=VARCHAR},
+      sclassify = #{sclassify,jdbcType=VARCHAR},
+      saddress = #{saddress,jdbcType=VARCHAR},
+      detailadd = #{detailadd,jdbcType=VARCHAR},
+      consumption = #{consumption,jdbcType=REAL},
+      deleflg = #{deleflg,jdbcType=INTEGER},
+      credate = #{credate,jdbcType=VARCHAR},
+      upddate = #{upddate,jdbcType=VARCHAR},
+      comments = #{comments,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select id, sid, sname, stel, sclassify, saddress, detailadd, consumption, deleflg, 
+    credate, upddate, comments
+    from t_bms_merchant
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+    <!--<select id="selectAll" resultMap="BaseResultMap">-->
+    <!--select id, sid, sname, stel, sclassify, saddress, detailadd, consumption, deleflg, -->
+    <!--credate, upddate, comments-->
+    <!--from t_bms_merchant-->
+    <!--where deleflg = 0-->
+    <!--</select>-->
+    <select id="selectAll" resultType="java.lang.Integer">
+        select count(*)
+        from t_bms_merchant
+        <where>
+            <if test="sid!=null and sid!=''">
+                and sid like '%${sid}%'
+            </if>
+            <if test="sname!=null and sname!=''">
+                and sname like '%${sname}%'
+            </if>
+            <if test="stel!=null and stel!=''">
+                and stel =#{stel}
+            </if>
+            <if test="sclassify!=null and sclassify!=''">
+                and sclassify =#{sclassify}
+            </if>
+            <if test="saddress!=null and saddress!=''">
+                and saddress =#{saddress}
+            </if>
+            <if test="detailadd!=null and detailadd!=''">
+                and detailadd like '%${detailadd}%'
+            </if>
+            <if test="lowconsumption!=null and lowconsumption!=''">
+                and consumption &gt; #{lowconsumption}
+            </if>
+
+            <if test="highconsumption!=null and highconsumption!=''">
+                and consumption &lt; #{highconsumption}
+            </if>
+            and deleflg =0
+
+        </where>
+    </select>
+
+
+    <select id="selectAllMerchantByCondition" resultMap="BaseResultMap">
+        select id, sid, sname, stel, sclassify, saddress, detailadd, consumption, deleflg,
+        credate, upddate, comments
+        from t_bms_merchant
+        <where>
+            1 = 1
+            <if test="sid!=null and sid!=''">
+                and sid like '%${sid}%'
+            </if>
+            <if test="sname!=null and sname!=''">
+                and sname like '%${sname}%'
+            </if>
+            <if test="stel!=null and stel!=''">
+                and stel =#{stel}
+            </if>
+            <if test="sclassify!=null and sclassify!=''">
+                and sclassify =#{sclassify}
+            </if>
+            <if test="saddress!=null and saddress!=''">
+                and saddress =#{saddress}
+            </if>
+            <if test="detailadd!=null and detailadd!=''">
+                and detailadd like '%${detailadd}%'
+            </if>
+            --
+            <if test="lowconsumption!=null and lowconsumption!=''">
+                and consumption &gt; #{lowconsumption}
+                --
+            </if>
+
+            <if test="highconsumption!=null and highconsumption!=''">
+                and consumption &lt; #{highconsumption}
+            </if>
+            and deleflg =0
+
+        </where>
+        limit ${pagrow},${rownumber}
+
+    </select>
+
+    <update id="updateDeleflg" parameterType="java.lang.String">
+    update t_bms_merchant
+    set deleflg = 1
+    where sid = #{sid}
+  </update>
+
+    <update id="updateMerchant" parameterType="cn.com.zhirun.bms_ssm.model.MerchantModel">
+    update t_bms_merchant
+    set
+      sname = #{sname},
+      stel = #{stel},
+      sclassify = #{sclassify},
+      saddress = #{saddress},
+      detailadd = #{detailadd},
+      consumption = #{consumption},
+      upddate = #{upddate}
+    where sid = #{sid}
+  </update>
+    <select id="selectMerchantBySid" resultMap="BaseResultMap" parameterType="String">
+    select id, sid, sname, stel, sclassify, saddress, detailadd, consumption, deleflg,
+    credate, upddate, comments
+    from t_bms_merchant
+    where sid = #{sid}
+  </select>
+
+    <insert id="insertMerchant" parameterType="cn.com.zhirun.bms_ssm.model.MerchantModel">
+    insert into t_bms_merchant (id, sid, sname,
+      stel, sclassify, saddress,
+      detailadd, consumption, deleflg,
+      credate, upddate, comments
+      )
+    values (#{id}, #{sid}, #{sname},
+      #{stel}, #{sclassify}, #{saddress},
+      #{detailadd}, #{consumption}, #{deleflg},
+      #{credate}, #{upddate}, #{comments}
+      )
+  </insert>
+
+</mapper>

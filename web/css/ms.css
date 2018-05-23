@@ -1,0 +1,543 @@
+ul li {
+    list-style: none;
+}
+a {
+    list-style: none;
+    text-decoration: none;
+
+}
+.titlefont {
+    font-family: "Microsoft YaHei";
+    font-size: 40px;
+    line-height: 64px;
+}
+
+.logo-position {
+    padding-left: 50px;
+}
+.timebox{
+    line-height: 64px;
+    text-align: left;
+}
+.naverdiv {
+    width: 100%;
+    height: 50px;
+    background-color: aliceblue;
+    overflow: hidden;
+}
+
+.naverul {
+    width: 70%;
+    float: left;
+    list-style: none;
+    text-align: center;
+    margin-left: 100px;
+}
+
+.naverul a {
+    display:block;
+    text-decoration: none;
+    width: 100%;
+}
+
+.naverul li {
+    line-height: 50px;
+    float: left;
+    padding: 0 100px;
+    font-weight: bold;
+    font-size: 20px;
+
+}
+.naverul li:hover {
+    background-color: deepskyblue;
+    color: white;
+}
+
+.naverul-right {
+    float: right;
+    list-style: none;
+    text-align: right;
+    margin-right: 20px;
+    line-height: 50px;
+    font-size: 16px;
+}
+.dis{
+    color: #ca1a1a;
+    text-decoration: none;
+}
+.img-size {
+    width: 100%;
+    height: 300px;
+}
+
+.bs-docs-footer {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #99979c;
+    background-color: #2a2730;
+}
+
+.bs-docs-footer-links {
+    padding-left: 20px;
+    margin-bottom: 20px;
+    list-style: none;
+}
+
+.footer-left {
+    float: left;
+    width: 60%;
+    text-align: center;
+    padding-left: 350px;
+}
+
+.footer-left a {
+    text-decoration: none;
+}
+
+.footer-right {
+    float: left;
+    width: 40%;
+    text-align: left;
+}
+
+.foot-p {
+    margin-top: 20px;
+}
+
+.foot-ul {
+    overflow: hidden;
+
+}
+
+.foot-ul * {
+    float: left;
+    padding: 0 10px;
+}
+
+.foot-wx {
+    width: 40px;
+    height: 40px;
+}
+
+.footright-text {
+    display: block;
+}
+
+.foot-li {
+    border-right: 1px darkgrey solid;
+    border-left: 1px darkgrey solid;
+}
+
+.centerdiv {
+    width: 100%;
+    height: 500px;
+    background: url("../images/bg02.jpg");
+    background-size: 100% 500px;
+    overflow: hidden;
+}
+
+.form1divclass {
+    width: 100%;
+    height: 300px;
+    margin-top: 100px;
+    float: left;
+}
+
+.form1class {
+    width: 600px;
+    height: 200px;
+    margin: 0 auto;
+    border: 2px solid dodgerblue;
+    box-shadow: 3px 3px 6px #c0a16b;
+    border-radius: 5px;
+    text-align: center;
+}
+.addclass{
+    height: 250px;
+}
+.form1ul {
+    width: 90%;
+    padding-left: 20px;
+
+}
+
+.form1li {
+    line-height: 30px;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.text01 {
+    width: 20%;
+    line-height: 36px;
+    text-align: right;
+    padding-right: 30px;
+    float: left;
+}
+.form1text{
+    width: 50%;
+    float: left;
+    line-height: 36px;
+    padding:0 4px;
+    border-radius: 3px;
+    border: none;
+}
+.valname{
+    width: 30%;
+    float: left;
+    line-height: 36px;
+    text-align: left;
+    padding-left: 5px;
+}
+.valpassword{
+    width: 30%;
+    float: left;
+    line-height: 36px;
+    text-align: left;
+    padding-left: 5px;
+}
+.loginbtn{
+    margin-top: 10px;
+    border-radius: 5px;
+    width: 80px;
+    height: 40px;
+    /* padding: 8px 2px; */
+    font-family: "Microsoft YaHei";
+    font-size: 18px;
+    color: white;
+    border: none;
+    text-align: center;
+    box-shadow: 2px 2px 5px darkgrey;
+    background-color: rgb(92,184,92);
+}
+.regbtn{
+    margin-top: 10px;
+    border-radius: 5px;
+    width: 80px;
+    height: 40px;
+    /* padding: 8px 2px; */
+    font-family: "Microsoft YaHei";
+    font-size: 18px;
+    color: white;
+    border: none;
+    text-align: center;
+    box-shadow: 2px 2px 5px darkgrey;
+    background-color: rgb(91,192,222);
+}
+.backgrounddiv {
+    width: 100%;
+    /*height: 1000px;*/
+    background: url("../images/image12.jpg");
+    background-size: 100%;
+    overflow: hidden;
+}
+.detailsdiv{
+    width: 90%;
+    margin-top: 50px;
+    margin-left: 50px;
+    background-color:rgb(150,200,225) ;
+    float: left;
+}
+.form2class {
+    width: 95%;
+    height: 300px;
+    padding-top: 50px;
+}
+.tableclass{
+    width: 90%;
+    /*height: 400px;*/
+    margin-left: 50px;
+    border: 1px white solid;
+    text-align: center;
+}
+
+.table-striped > tbody > tr:nth-of-type(1) {
+    background-color: pink;
+}
+.table-striped > tbody > tr {
+   height: 50px;
+}
+.table > tbody > tr > th{
+    text-align: center;
+    padding: 15px;
+}
+.form2ul{
+    width: 100%;
+    padding-left: 20px;
+}
+.form3ul{
+    width: 100%;
+    height: 250px;
+    padding-left: 20px;
+}
+.form3ul *{
+    text-align: center;
+}
+.form2ul *{
+    text-align: center;
+}
+.form2li {
+    line-height: 36px;
+    overflow: hidden;
+    margin-top: 10px;
+    padding-left: 100px;
+    font-size: 16px;
+
+}
+.form3li {
+    line-height: 36px;
+    overflow: hidden;
+    margin-top: 10px;
+    padding-left: 50px;
+    font-size: 16px;
+
+}
+.text02 {
+    width: 100px;
+    line-height: 36px;
+    text-align: right;
+    margin-left: 5px;
+    padding-left: 0px;
+    padding-right: 14px;
+    float: left;
+}
+.textt{
+    width: 100px;
+    line-height: 36px;
+    text-align: center;
+    margin-left: 5px;
+    padding-left: 0px;
+    padding-right: 14px;
+    float: left;
+}
+.form2text{
+    border-radius: 5px;
+    float: left;
+    width: 200px;
+    padding-left: 4px;
+    text-align: left;
+    line-height: 30px;
+}
+ .radioclass[type=radio]{
+     display: inline-block;
+     float: left;
+     width: 16px;
+     height: 16px;
+     margin: 0px 0 0;
+     margin-top: 7px;
+}
+ .radiospanclass{
+    width: 84px;
+    float: left;
+    text-align:left;
+    line-height: 30px;
+     padding-left: 10px;
+}
+.form2select{
+    border-radius: 5px;
+    display: inline-block;
+    float: left;
+    width: 200px;
+    height: 36px;
+    padding-left: 4px;
+    text-align: left;
+}
+.detailadd{
+    border-radius: 5px;
+    float: left;
+    width: 340px;
+    line-height: 30px;
+    padding-left: 4px;
+    text-align: left;
+}
+.form2btn1{
+    width: 60px;
+    height: 34px;
+    border-radius: 5px;
+    margin-left: 0px;
+    margin-right: 240px;
+    color: white;
+    background-color: rgb(216,67,61);
+    padding: 0;
+    border: none;
+    box-shadow: 2px 2px 2px grey;
+
+ }
+.form2btn2{
+    width: 60px;
+    height: 34px;
+    border-radius: 5px;
+    margin-left:0px;
+    margin-right: 180px;
+    color: white;
+    background-color: rgb(51,122,183);
+    padding: 0;
+    border: none;
+    box-shadow: 2px 2px 2px grey;
+}
+.hrclass{
+    border: 2px black dashed;
+    margin: 0 100px;
+}
+.tableopera{
+    width: 90%;
+    height: 50px;
+    /*overflow: hidden;*/
+    margin-left: 50px;
+    margin-top: 30px;
+    margin-bottom: 5px;
+}
+.operaulleft{
+    width: 70%;
+    float: left;
+    overflow: hidden;
+    margin-top: 20px;
+    margin-left: -60px;
+
+}
+.operaulleft *{
+    float: left;
+
+}
+.operaulleft li{
+    float: left;
+    text-align: center;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.operaulright{
+    width: 35%;
+    float: left;
+    overflow: hidden;
+    margin-top: 20px;
+}
+.operaulright *{
+    float: right;
+    text-align: right;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.delectbtnclass{
+    width: 80px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: #ff6040;
+    border: none;
+    box-shadow: 2px 2px 3px darkgrey;
+    color: white;
+}
+.tablefoot{
+    width: 90%;
+    height: 50px;
+    margin-left: 50px;
+
+    text-align: center;
+}
+.background2div {
+    width: 100%;
+    height: 500px;
+    background: url("../images/image12.jpg");
+    background-size: 100%;
+    overflow: hidden;
+}
+.adddiv{
+    width: 90%;
+    height: 400px;
+    margin-top: 50px;
+    margin-left: 50px;
+    background-color:rgb(150,200,225) ;
+    float: left;
+}
+.alterbtn{
+    width: 60px;
+    height: 34px;
+    border-radius: 5px;
+    color: white;
+    background-color: rgb(92,184,92);
+    text-align: center;
+    line-height: 34px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-shadow: 2px 2px 2px grey;
+}
+.managediv{
+    width: 100%;
+    height: 120px;
+    overflow: hidden;
+    padding-top: 12px;
+    text-align: center;
+    position: absolute;
+    z-index: 100;
+    display: none;
+    background-color: white;
+}
+.managedivleft{
+    width: 50%;
+    float: left;
+    padding-left: 200px;
+    border-right: 1px lightgray solid;
+}
+.managedivright{
+    width: 50%;
+    float: left;
+    padding-right: 150px;
+}
+.leftrightimg{
+    width: 90px;
+    height: 90px;
+}
+.leftrightimgtext{
+    padding-top: 40px;
+    text-align: center;
+    font-family: "Microsoft YaHei";
+    font-size: 30px ;
+}
+.bigimg{
+    position: relative;
+}
+.table > tbody > tr > td{
+    padding: 8px;
+    /* line-height: 1.42857143; */
+    vertical-align:middle;
+    border-top: 1px solid #ddd;
+    line-height: 40px;
+}
+.operalileft{
+    margin-left: 0px;
+}
+.operamessage{
+    padding: 0;
+    line-height: 30px;
+    font-size: 16px;
+}
+.tableline{
+    padding: 0px;
+    color: red;
+}
+.form3class {
+    width: 100%;
+    height: 320px;
+    padding-top: 30px;
+}
+.adddiv2{
+    width: 70%;
+    height: 340px;
+    margin-top: 50px;
+    margin-left: 200px;
+    background-color:rgb(150,200,225) ;
+    float: left;
+}
+.resultclass{
+    margin: 70px auto;
+    font-family: "Microsoft YaHei";
+    font-size: 20px;
+}
+.rownumclass{
+    line-height: 1.42857143;
+    font-size: 14px;
+    padding: 6px 12px;
+    margin-top: 1px;
+    border: 1px;
+    border-radius: 4px;
+}
